@@ -35,7 +35,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ Added for static file handling
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -106,21 +105,13 @@ USE_L10N = True
 USE_TZ = True
 
 
-import os
-
-# Static files (CSS, JS, Images)
+# Static files (CSS, JS, images)
 STATIC_URL = '/static/'
 
-# Used during development
+# Optional: use static folder in BASE_DIR
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'spam_detector', 'static'),
 ]
-
-# Used in production (Render)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Required for production static serving with WhiteNoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
