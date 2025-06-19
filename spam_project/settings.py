@@ -104,13 +104,21 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JS, images)
+import os
+
+# Static files (CSS, JS, Images)
 STATIC_URL = '/static/'
 
-# Optional: use static folder in BASE_DIR
+# Used during development
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'spam_detector', 'static'),
 ]
+
+# Used in production (Render)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Required for production static serving with WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
