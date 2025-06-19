@@ -2,7 +2,7 @@
 Django==3.2.15
 
 # ML Model Serving
-tensorflow==2.11
+tensorflow
 
 # For preprocessing text
 nltk==3.8.1
