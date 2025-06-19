@@ -1,0 +1,12 @@
+# Django framework
+Django==3.2.15
+
+# ML Model Serving
+tensorflow==2.10.0
+
+# For preprocessing text
+nltk==3.8.1
+
+# Required by TensorFlow or NLTK
+numpy==1.21.6
+pillow==9.4.0
