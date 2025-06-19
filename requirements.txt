@@ -12,7 +12,7 @@ numpy==1.21.6
 pillow==9.4.0
 
 # Static files serving in production (important for Render)
-whitenoise==6.6.0
+whitenoise==6.5.0
 
 # For secure HTTP headers (optional but good for production)
 gunicorn==21.2.0
